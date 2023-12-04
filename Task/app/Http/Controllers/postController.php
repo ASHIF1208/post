@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\post;
 use App\Models\command;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class postController extends Controller
@@ -27,7 +28,8 @@ class postController extends Controller
     public function showpost(){
         $item = post::get();
         $command = command::get();
-        return view('posts.showPosts',compact('item','command'));
+        $user = User::get();
+        return view('posts.showPosts',compact('item','command','user'));
     }
 
     public function postcommand(Request $comm,$id){

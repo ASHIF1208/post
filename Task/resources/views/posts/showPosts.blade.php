@@ -21,7 +21,7 @@
 <div class="container mt-3">
     <h2>{{$items->title}}</h2>
     <div class="card" style="width:400px">
-        <img class="card-img-top" src="{{asset('storage/file/'.$items->image)}}" alt="Card image" style="width:100%" height="280px">
+        <img class="card-img-top" src="{{asset('storage/file/'.$items->image)}}" alt="{{$items->title}}" style="width:100%" height="280px">
         <div class="card-body">
         <p class="card-text">{{$items->content}}</p>
         <form action="addcommand/{{$items->id}}" method="post">
@@ -34,7 +34,13 @@
         <div class="command container" >
             @foreach($command as $com)
                 @if($items->id == $com->post_id)
-                <p>{{$com->command}}</p>
+                    @foreach($user as $users)
+                        @if($com->user_id == $users->id)
+                            <span class=>{{$users->name}} =></span>
+                        @endif
+                    @endforeach
+                    <span class="ms-3">{{$com->command}}</span>
+
                 @endif
             @endforeach
         </div>

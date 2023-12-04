@@ -18,8 +18,8 @@
       <input type="text" class="form-control" id="title" placeholder="Enter title" name="title">
     </div>
     <div class="mb-3">
-      <label for="content">Content:</label>
-      <input type="text" class="form-control" id="content" placeholder="Enter content" name="content">
+      <label for="content">Content:</label><br>
+      <textarea name="content" id="content" cols="40" rows="5"></textarea>
     </div>
     <div class="mb-3">
       <label for="content">Upload images:</label>
