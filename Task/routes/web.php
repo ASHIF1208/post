@@ -33,3 +33,4 @@ Route::post('/addpost',[postController::class,"addpost"]);
 Route::get('/showpost',[postController::class,"showpost"]);
 
 Route::post('/addcommand/{id}',[postController::class,"postcommand"]);
+Route::get('/findpost/{id}',[postController::class,"findpost"]);

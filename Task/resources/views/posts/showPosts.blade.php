@@ -11,7 +11,7 @@
         width:100%;
         height:80px;
         overflow: auto;
-        line-height:10px;
+        line-height:16px;
     }
   </style>
 </head>
@@ -36,12 +36,11 @@
                 @if($items->id == $com->post_id)
                     @foreach($user as $users)
                         @if($com->user_id == $users->id)
-                            <span class=>{{$users->name}} =></span>
+                          <a href="findpost/{{$users->id}}">  <span class=>{{$users->name}} =></span></a>
                         @endif
                     @endforeach
-                    <span class="ms-3">{{$com->command}}</span>
-
-                @endif
+                    <span class="ms-3">{{$com->command}}</span> <br>
+                 @endif
             @endforeach
         </div>
         </div>
